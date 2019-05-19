@@ -6,7 +6,7 @@ from learning.models import Quizzes, Tasks
 from profession.models import Profession
 
 
-class People(models.Model):
+class Person(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, default=0)
     profession = models.ForeignKey(Profession, on_delete=models.CASCADE,null=True, blank=True)
     institution = models.ForeignKey(Institution, on_delete=models.CASCADE,null=True, blank=True)
@@ -17,17 +17,17 @@ class People(models.Model):
         abstract = True
 
 
-class Student(People, models.Model):
+class Student(Person, models.Model):
     def __init__(self, user, profession, institution, quizzes, tasks):
-        People.__init__(user=user, profession=profession, institution=institution, quizzes=quizzes, tasks=tasks)
+        Person.__init__(user=user, profession=profession, institution=institution, quizzes=quizzes, tasks=tasks)
 
     def __str__(self):
         return f"{self.user}"
 
 
-class Teacher(People, models.Model):
+class Teacher(Person, models.Model):
     def __init__(self, user, profession, institution, quizzes, tasks):
-        People.__init__(self,user=user, profession=profession, institution=institution, quizzes=quizzes, tasks=tasks)
+        Person.__init__(self,user=user, profession=profession, institution=institution, quizzes=quizzes, tasks=tasks)
 
     def __str__(self):
         return f"{self.user}"
