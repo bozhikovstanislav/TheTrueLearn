@@ -1,11 +1,11 @@
 from django.contrib import admin
 
-from .models import Tasks,Quizzes,Article,AnswersToTask,AnswerToQuizzes,QuestionsToQuizzes
+# Register your models here.
+from .models import Article,Quizzes,QuestionsToQuizzes,AnswerToQuizzes,AnswersToTask,Tasks
 
-
-admin.site.register(Tasks)
-admin.site.register(Quizzes)
 admin.site.register(Article)
-admin.site.register(AnswersToTask)
-admin.site.register(AnswerToQuizzes)
+admin.site.register(Quizzes)
 admin.site.register(QuestionsToQuizzes)
+admin.site.register(AnswerToQuizzes)
+admin.site.register(AnswersToTask)
+admin.site.register(Tasks)
