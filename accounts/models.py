@@ -15,8 +15,10 @@ class People(models.Model):
 
 
 class Student(People, models.Model):
-    pass
+    def __init__(self, name, profession, institution, quizzes, tasks):
+        People.__init__(self, name=name, profession=profession, institution=institution, quizzes=quizzes, tasks=tasks)
 
 
 class Teacher(People, models.Model):
-    pass
+    def __init__(self, name, profession, institution, quizzes, tasks):
+        People.__init__(self, name=name, profession=profession, institution=institution, quizzes=quizzes, tasks=tasks)
